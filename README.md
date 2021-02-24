@@ -3,6 +3,9 @@
 ## Overview
 You will create an app that allows the user to put a search term into a field, and see museum works that contain this search term in their titles. As a stretch goal, your app will allow users to add any search results they like to the list of popular works, and allow users to view all popular works.
 
+## Getting started
+Fork and clone this repo. You will build the express project right here!
+
 ## Core goals
 1. User comes to the homepage and sees a search form
 1. User enters a term and submits the form
