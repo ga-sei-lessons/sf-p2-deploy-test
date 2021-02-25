@@ -9,11 +9,15 @@ router.get('/', async (req, res) => {
 
   let filteredRecords = []
 
-  for(record of records) {
+  for(record of records) {    
     if(record.primaryimageurl) filteredRecords.push(record)
   }
   // console.log(filteredRecords)
   res.render('works/searchResults.ejs', { works: filteredRecords })
+})
+
+router.post('/', (req, res) => {
+  res.send('HELLO FROM THE POST ROUTE!')
 })
 
 module.exports = router

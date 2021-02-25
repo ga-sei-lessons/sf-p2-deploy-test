@@ -11,6 +11,8 @@ app.use(morgan('tiny'))
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 app.use(express.static('public'))
+// allow POST actions from forms
+app.use(express.urlencoded({ extended: true }))
 
 // route zone
 app.get('/', (req, res) => {
@@ -18,7 +20,7 @@ app.get('/', (req, res) => {
 }) 
 
 app.use('/works', require('./controllers/worksController'))
-
+app.use('/faves', require('./controllers/favesController'))
 app.listen(3000, () => {
   console.log('server started!')
   rowdyResults.print()

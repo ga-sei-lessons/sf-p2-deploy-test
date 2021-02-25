@@ -2,5 +2,12 @@
   <div>
     <h4><%= work.title %></h4>
     <img src="<%= work.primaryimageurl %>"/>
+    <form action="/faves" method="POST">
+      <input type="hidden" name="title" value="<%= work.title %>" />
+
+      <input type="hidden" name="primaryimageurl" value="<%= work.primaryimageurl %>" />
+
+      <input type="submit" />
+    </form>
   </div>
 <% } %>
