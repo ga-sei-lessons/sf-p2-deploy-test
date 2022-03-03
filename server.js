@@ -5,6 +5,7 @@ const rowdy = require('rowdy-logger')
 const rowdyResults = rowdy.begin(app)
 const morgan = require('morgan')
 const ejsLayouts = require('express-ejs-layouts')
+const PORT = process.env.PORT || 3000
 
 // middleware zone
 app.use(morgan('tiny'))
@@ -21,7 +22,8 @@ app.get('/', (req, res) => {
 
 app.use('/works', require('./controllers/worksController'))
 app.use('/faves', require('./controllers/favesController'))
-app.listen(3000, () => {
+
+app.listen(PORT, () => {
   console.log('server started!')
   rowdyResults.print()
   console.log(process.env.BING)
